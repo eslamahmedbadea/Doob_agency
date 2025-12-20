@@ -348,7 +348,6 @@ body {
   line-height: var(--line-height);
 }
 
-/* Images */
 #portfolio img {
   width: 100%;
   display: block;
@@ -373,16 +372,6 @@ body {
 .port-slide {
   min-width: 100%;
   box-sizing: border-box;
-}
-
-.port-slide .row {
-  margin: 0;
-}
-
-.port-slide .col-lg-4,
-.port-slide .col-md-6,
-.port-slide .col-sm-12 {
-  padding: 8px;
 }
 
 #port-arrow-1,
@@ -429,12 +418,6 @@ body {
 .port5,
 .port6 {
   max-width: 100%;
-}
-
-#portfolio .col-lg-4 img,
-#portfolio .col-md-6 img,
-#portfolio .col-sm-12 img {
-  margin-bottom: 5px;
 }
 /* End Portfolio */
 
