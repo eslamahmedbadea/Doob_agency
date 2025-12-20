@@ -16,6 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
+section,
+.container {
+  scroll-margin-top: 90px;
+}
+
 a {
   text-decoration: none;
 }

@@ -135,6 +135,6 @@ document.forms[0].onsubmit = function (e) {
    AOS Init
 ====================================================== */
 AOS.init({
-  duration: 800,
+  duration: 500,
   once: true,
 });
