@@ -20,12 +20,6 @@ a {
   text-decoration: none;
 }
 
-#brand-logo {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-}
-
 body {
   font-family: 'Work Sans', sans-serif;
 }
