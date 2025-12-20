@@ -1,24 +1,35 @@
-// --------------------------------------------------------------------------- //
+// Start Direction Helper //
+function getDirFactor() {
+  if (document.documentElement.dir === 'rtl') {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+// End Direction Helper //
 
-//-// Start About //-//
+// Start About Slider //
 let slider = document.querySelector('.slider-wrapper');
 let slidersNumber = document.querySelectorAll('.every-slide-container');
 let nextBtn = document.querySelector('.arrow-about-right');
 let prevBtn = document.querySelector('.arrow-about-left');
 let currentAboutSlider = 0;
 
-// Install right arrow slide
+function updateAboutSlider() {
+  slider.style.transform = `translateX(${
+    getDirFactor() * currentAboutSlider * 100
+  }%)`;
+}
+
 nextBtn.onclick = function () {
   currentAboutSlider++;
 
   if (currentAboutSlider > slidersNumber.length - 1) {
     currentAboutSlider = 0;
   }
-
-  slider.style.transform = `translateX(-${currentAboutSlider * 100}%)`;
+  updateAboutSlider();
 };
 
-// Install left arrow slide
 prevBtn.onclick = function () {
   currentAboutSlider--;
 
@@ -26,67 +37,65 @@ prevBtn.onclick = function () {
     currentAboutSlider = slidersNumber.length - 1;
   }
 
-  slider.style.transform = `translateX(-${currentAboutSlider * 100}%)`;
+  updateAboutSlider();
 };
-//-// End About //-//
+// End About Slider //
 
-// --------------------------------------------------------------------------- //
-
-//--// Start Portfolio //-//
+// Start Portfolio Slider //
 let morePortfolio = document.querySelector('.more-portfolio');
 let seeMoreButton = document.querySelector('.portfolio-last-p');
 
-// Show & Hide projects
 seeMoreButton.onclick = function () {
-  if (morePortfolio.style.display === 'block') {
-    morePortfolio.style.display = 'none';
-  } else {
-    morePortfolio.style.display = 'block';
-  }
+  morePortfolio.style.display =
+    morePortfolio.style.display === 'block' ? 'none' : 'block';
 };
 
-// Portfolio Slider
 let portWrapper = document.querySelector('.port-wrapper');
 let portArrowNext = document.querySelector('#port-arrow-2');
 let portArrowPrev = document.querySelector('#port-arrow-1');
 let portSlides = document.querySelectorAll('.port-slide');
 let currentPortSlide = 0;
 
+function updatePortfolioSlider() {
+  portWrapper.style.transform = `translateX(${
+    getDirFactor() * currentPortSlide * 100
+  }%)`;
+}
+
 portArrowNext.onclick = function () {
   currentPortSlide++;
+
   if (currentPortSlide > portSlides.length - 1) {
     currentPortSlide = 0;
   }
-  portWrapper.style.transform = `translateX(-${currentPortSlide * 100}%)`;
+
+  updatePortfolioSlider();
 };
 
 portArrowPrev.onclick = function () {
   currentPortSlide--;
+
   if (currentPortSlide < 0) {
     currentPortSlide = portSlides.length - 1;
   }
-  portWrapper.style.transform = `translateX(-${currentPortSlide * 100}%)`;
+
+  updatePortfolioSlider();
 };
-//--// Start Portfolio //-//
+// End Portfolio Slider //
 
-// --------------------------------------------------------------------------- //
-
-//--// Start Blog //-//
+// Start Blog Slider //
 let blogAllCards = document.querySelectorAll('.blog-card');
-for (let i = 0; i < blogAllCards.length; i++) {
-  blogAllCards[i].onclick = function () {
-    for (let j = 0; j < blogAllCards.length; j++) {
-      blogAllCards[j].classList.remove('active');
-    }
+
+// Activate card
+blogAllCards.forEach((card) => {
+  card.onclick = function () {
+    blogAllCards.forEach((c) => c.classList.remove('active'));
     this.classList.add('active');
   };
-}
+});
 
-// Change news
-let blogCards = document.querySelectorAll('.blog-card');
-
-for (let i = 0; i < blogCards.length; i++) {
-  let card = blogCards[i];
+// Change news inside card
+blogAllCards.forEach((card) => {
   let arrow = card.querySelector('.blog-arrow');
   let wrapper = card.querySelector('.blog-wrapper');
   let slides = card.querySelectorAll('.blog-slide');
@@ -98,51 +107,33 @@ for (let i = 0; i < blogCards.length; i++) {
     if (currentSlide >= slides.length) {
       currentSlide = 0;
     }
-    wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    wrapper.style.transform = `translateX(${
+      getDirFactor() * currentSlide * 100
+    }%)`;
   };
-}
-//--// End Blog //-//
+});
+// End Blog Slider //
 
-// --------------------------------------------------------------------------- //
-
-//--// Start Form Validation //-//
+// Start Form Validation //
 let emailForm = document.querySelector('#mail-form');
 let subjectForm = document.querySelector('#subject-form');
 let messageForm = document.querySelector('#message-form');
 
 document.forms[0].onsubmit = function (e) {
-  // Flags
-  let emailValid = true;
-  let subjectValid = true;
-  let messageValid = true;
+  let emailValid = emailForm.value.trim() !== '';
+  let subjectValid = subjectForm.value.trim() !== '';
+  let messageValid = messageForm.value.trim() !== '';
 
-  // Check email
-  if (emailForm.value === '') {
-    emailValid = false;
-  }
-
-  // Check subject
-  if (subjectForm.value === '') {
-    subjectValid = false;
-  }
-
-  // Check message
-  if (messageForm.value === '') {
-    messageValid = false;
-  }
-
-  // Stop submit if any field is invalid
-  if (
-    emailValid === false ||
-    subjectValid === false ||
-    messageValid === false
-  ) {
+  if (!emailValid || !subjectValid || !messageValid) {
     e.preventDefault();
   }
 };
-//--// End Form Validation //-//
+// End Form Validation //
 
-// AOS Call
+/* ======================================================
+   AOS Init
+====================================================== */
 AOS.init({
   duration: 800,
   once: true,
