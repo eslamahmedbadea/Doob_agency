@@ -44,8 +44,10 @@ body {
 @media (max-width: 991px) {
   .upBtn {
     right: 50%;
+    transform: translateX(50%);
   }
 }
+
 /* End Global Rules */
 
 /* Start Nav */
