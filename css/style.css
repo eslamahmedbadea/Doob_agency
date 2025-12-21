@@ -28,6 +28,17 @@ a {
 body {
   font-family: 'Work Sans', sans-serif;
 }
+
+.upBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+}
 /* End Global Rules */
 
 /* Start Nav */

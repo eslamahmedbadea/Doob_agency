@@ -1,3 +1,21 @@
+// Start Go Up Button //
+goUpBtn = document.querySelector('.upBtn');
+window.onscroll = function () {
+  if (window.scrollY >= 1000) {
+    goUpBtn.style.display = 'block';
+  } else {
+    goUpBtn.style.display = 'none';
+  }
+};
+
+goUpBtn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+// End Go Up Button //
+
 // Start Direction Helper //
 function getDirFactor() {
   if (document.documentElement.dir === 'rtl') {
