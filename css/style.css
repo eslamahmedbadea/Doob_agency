@@ -14,6 +14,7 @@
 /* Start Global Rules */
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 section,
@@ -47,7 +48,6 @@ body {
   .upBtn {
     right: 50%;
     transform: translateX(50%);
-    overflow: hidden;
   }
 }
 
