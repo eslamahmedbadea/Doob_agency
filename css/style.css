@@ -7,13 +7,6 @@
   --line-height: 1.5;
   --section-padding: 110px 15px;
 }
-
-/* Dark Mode */
-body.dark-theme {
-  --main-color: #6c7cff;
-  --secondary-color: #ff5c5c;
-  --background-color: #0f1220;
-}
 /* End Variables */
 
 /* Start Global Rules */
