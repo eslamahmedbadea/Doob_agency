@@ -38,6 +38,13 @@ body {
   border: none;
   border-radius: 50%;
   display: none;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .upBtn {
+    right: 45%;
+  }
 }
 /* End Global Rules */
 
