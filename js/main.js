@@ -152,7 +152,9 @@ document.forms[0].onsubmit = function (e) {
 /* ======================================================
    AOS Init
 ====================================================== */
-AOS.init({
-  duration: 500,
-  once: true,
+window.addEventListener('load', () => {
+  AOS.init({
+    once: true,
+    disableMutationObserver: true,
+  });
 });
