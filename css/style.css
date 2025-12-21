@@ -43,12 +43,12 @@ body {
   z-index: 1;
 }
 
-/* @media (max-width: 991px) {
+@media (max-width: 991px) {
   .upBtn {
     right: 50%;
     transform: translateX(50%);
   }
-} */
+}
 
 /* End Global Rules */
 
