@@ -3,11 +3,16 @@
   /* Light Mode */
   --main-color: #314584;
   --secondary-color: #ff3946;
-  --third-background: white;
-  --p-color: #777;
   --main-transition: 0.3s;
   --line-height: 1.5;
   --section-padding: 110px 15px;
+}
+
+/* Dark Mode */
+body.dark-theme {
+  --main-color: #6c7cff;
+  --secondary-color: #ff5c5c;
+  --background-color: #0f1220;
 }
 /* End Variables */
 
