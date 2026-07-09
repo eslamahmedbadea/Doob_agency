@@ -28,7 +28,7 @@ This structure is widely used in modern landing pages to improve user engagement
 
 - HTML5
 - CSS3 (Flexbox & Grid)
-- JavaScript (Vanilla JS)
+- JavaScript
 
 ## ✨ Features
 
