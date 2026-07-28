@@ -1,6 +1,6 @@
 # Doob Agency Landing Page
 
-A modern and responsive digital agency landing page built using HTML, CSS, and JavaScript. This project focuses on clean design, smooth user experience, and well-structured layout for agency-style websites.
+A modern and responsive digital agency website built using HTML, CSS, and JavaScript. This project focuses on clean design, smooth user experience, and well-structured layout for agency-style website.
 
 ## 🚀 Overview
 
@@ -29,6 +29,7 @@ This structure is widely used in modern landing pages to improve user engagement
 - HTML5
 - CSS3 (Flexbox & Grid)
 - JavaScript
+- Bootstrap
 
 ## ✨ Features
 
